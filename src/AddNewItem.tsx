@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddItemButton } from "./styles";
+import { NewItemForm } from "./NewItemForm";
 
 //Create AddNewItem Component using State
 
@@ -15,6 +16,14 @@ export const AddNewItem = (props: AddNewItemProps) => {
 
     if (showForm) {
         //We show item creation form here
+        return (
+            <NewItemForm
+                onAdd={(text) => {
+                    onAdd(text)
+                    setShowForm(false)
+                }}
+            />
+        )
     }
 
     return (

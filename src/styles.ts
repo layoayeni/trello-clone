@@ -4,7 +4,7 @@ type AddItemButtonProps = {
     dark?: boolean
 }
 
-//AppContainer Component
+//App Container Component
 export const AppContainer = styled.div`
     align-items: flex-start;
     background-color: #3179ba;
@@ -15,7 +15,7 @@ export const AppContainer = styled.div`
     width: 100%;
 `
 
-//ColumnContainer Component
+//Column Container Component
 export const ColumnContainer = styled.div`
     background-color: #ebecf0;
     width: 300px;
@@ -26,13 +26,13 @@ export const ColumnContainer = styled.div`
     flex-grow: 0;
 `
 
-//ColumnTitle
+//Column Title
 export const ColumnTitle = styled.div`
     padding: 6px 16px 12px;
     font-weight: bold;
 `
 
-//CardContainer
+//Card Container
 export const CardContainer = styled.div`
     background-color: #fff;
     cursor: pointer;
@@ -43,6 +43,7 @@ export const CardContainer = styled.div`
     box-shadow: #091e4240 0px 1px 0px 0px;
 `
 
+//Add New Item(list and task) button
 export const AddItemButton = styled.button<AddItemButtonProps>`
     background-color: #ffffff3d;
     border-radius: 3px;
@@ -57,4 +58,35 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
     &:hover {
         background-color: #ffffff52;
     }
+`
+
+//New Item Form Container
+export const NewItemFormContainer = styled.div`
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+`
+
+//New Item Input
+export const NewItemInput = styled.input`
+    border-radius: 3px;
+    border: none;
+    box-shadow: #091e4240 0px 1px 0px 0px;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    width: 100%
+`
+
+//New Item Button
+export const NewItemButton = styled.button`
+    background-color: #5aac44;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    padding: 6px 12px;
+    text-align: center;
+
 `
