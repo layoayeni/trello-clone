@@ -16,8 +16,12 @@ export const App = () => {
       )
       )
       }
-      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
+      <AddNewItem 
+        toggleButtonText="+ Add another list" 
+        onAdd={console.log} />
     </AppContainer>
   )
 }
+
+
 
