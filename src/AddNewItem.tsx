@@ -1,34 +1,31 @@
-import { useState } from "react";
-import { AddItemButton } from "./styles";
-import { NewItemForm } from "./NewItemForm";
+import React, { useState } from "react"
+import { NewItemForm } from "./NewItemForm"
+import { AddItemButton } from "./styles"
 
-//Create AddNewItem Component using State
-
-type AddNewItemProps = {
-    onAdd(text: string): void
-    toggleButtonText: string
-    dark?: boolean
+interface AddNewItemProps {
+  onAdd(text: string): void
+  toggleButtonText: string
+  dark?: boolean
 }
 
 export const AddNewItem = (props: AddNewItemProps) => {
-    const [showForm, setShowForm] = useState(false)
-    const { onAdd, toggleButtonText, dark } = props
+  const [showForm, setShowForm] = useState(false)
+  const { onAdd, toggleButtonText, dark } = props
 
-    if (showForm) {
-        //We show item creation form here
-        return (
-            <NewItemForm
-                onAdd={(text) => {
-                    onAdd(text)
-                    setShowForm(false)
-                }}
-            />
-        )
-    }
-
+  if (showForm) {
     return (
-        <AddItemButton dark={dark} onClick={() => setShowForm(true)}>
-            {toggleButtonText}
-        </AddItemButton>
+      <NewItemForm
+        onAdd={text => {
+          onAdd(text)
+          setShowForm(false)
+        }}
+      />
     )
+  }
+
+  return (
+    <AddItemButton dark={dark} onClick={() => setShowForm(true)}>
+      {toggleButtonText}
+    </AddItemButton>
+  )
 }
